@@ -1,0 +1,60 @@
+:root{
+  --bg1:#0f172a; --bg2:#071028;
+  --card:#0b1220; --glass: rgba(255,255,255,0.03);
+  --accent:#7c3aed; --accent2:#06b6d4;
+  --muted:rgba(255,255,255,0.7);
+  --glass-border: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter,system-ui,Arial; color:#e6eef8; background:linear-gradient(180deg,var(--bg1),var(--bg2)); -webkit-font-smoothing:antialiased;}
+canvas#bg{position:fixed; inset:0; z-index:0}
+#confetti{position:fixed; inset:0; pointer-events:none; z-index:60}
+
+.nav{position:fixed; top:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:14px 30px; z-index:50}
+.logo{font-weight:700; letter-spacing:0.4px; font-size:18px; animation:floaty 6s ease-in-out infinite;}
+.btn{background:transparent; border:1px solid rgba(255,255,255,0.06); padding:8px 12px; border-radius:8px; color:var(--muted); cursor:pointer}
+.btn.tiny{padding:6px 10px; font-size:13px}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2)); border:none; color:white; box-shadow:0 8px 30px rgba(12,10,30,0.6)}
+.btn.ghost{background:transparent; border:1px dashed rgba(255,255,255,0.05)}
+
+.container{max-width:1100px; margin:110px auto 80px; padding:0 20px; position:relative; z-index:20}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--glass-border); border-radius:16px; padding:22px; display:flex; gap:20px; align-items:stretch; box-shadow: 0 6px 30px rgba(2,6,23,0.6);}
+
+.hero{align-items:flex-start; justify-content:space-between}
+.hero-left{flex:1; padding-right:16px}
+.hero-right{width:360px; display:flex; align-items:center; justify-content:center}
+h1{font-size:30px; margin:0 0 8px; line-height:1.05}
+h1 .accent{background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.muted{color:var(--muted); margin:0 0 14px}
+
+.form label{display:block; font-size:13px; margin-top:8px; color:var(--muted)}
+input[type="text"], input {width:100%; padding:10px 12px; margin-top:8px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none}
+.hint{margin-top:10px; color:var(--muted); font-size:13px}
+.chip{display:inline-block; margin:6px 6px 0 0; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.03); cursor:pointer; border:1px solid rgba(255,255,255,0.02)}
+.row{display:flex; gap:10px; margin-top:14px}
+
+.glassy{width:100%; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:14px; border:1px solid var(--glass-border)}
+.preview{min-height:140px; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:15px; border-radius:8px; border:1px dashed rgba(255,255,255,0.03); padding:10px; margin-top:10px}
+
+.results{flex-direction:column; margin-top:26px}
+.results-header{display:flex; justify-content:space-between; align-items:center}
+.badge{background:rgba(255,255,255,0.03); padding:6px 10px; border-radius:999px; color:var(--muted)}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:16px}
+.career-card{padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.03); transition:transform .28s ease, box-shadow .28s}
+.career-card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(12,10,30,0.6)}
+.career-title{font-weight:700; margin-bottom:6px}
+.career-desc{color:var(--muted); font-size:14px; margin-bottom:8px}
+.tag{display:inline-block; padding:6px 8px; border-radius:999px; background:rgba(255,255,255,0.03); margin-right:6px; font-size:13px}
+
+@keyframes floaty {0%{transform:translateY(0px)}50%{transform:translateY(-8px)}100%{transform:translateY(0px)}}
+
+.hide{display:none}
+
+@media (max-width:900px){
+  .hero{flex-direction:column}
+  .hero-right{width:100%}
+  .container{margin-top:90px}
+}
+
+

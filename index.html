@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Career Recommender — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <header class="nav">
+    <div class="logo">CareerPulse</div>
+    
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div class="hero-left">
+        <h1>Discover career paths that fit <span class="accent">your skills</span> & interests</h1>
+        <p class="muted">A sleek, animated demo that recommends careers instantly — AI-like reasoning done in your browser.</p>
+
+        <div class="form">
+          <label>Enter your skills (comma separated)</label>
+          <input id="skillsInput" placeholder="e.g. Python, Excel, HTML" />
+          <label>Interests / Focus</label>
+          <input id="interestsInput" placeholder="e.g. data, web, ai, design" />
+          <label>Career Goal (optional)</label>
+          <input id="goalInput" placeholder="e.g. high salary, creative, remote" />
+          <div class="hint">
+            Quick picks:
+            <span class="chip" data-skill="Python">Python</span>
+            <span class="chip" data-skill="React">React</span>
+            <span class="chip" data-skill="SQL">SQL</span>
+            <span class="chip" data-skill="Figma">Figma</span>
+            <span class="chip" data-skill="Excel">Excel</span>
+            <span class="chip" data-skill="Machine Learning">Machine Learning</span>
+          </div>
+          <div class="row">
+            <button id="recommendBtn" class="btn primary">Recommend Careers</button>
+            <button id="resetBtn" class="btn ghost">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="glassy">
+          <h3 class="muted">Live Preview</h3>
+          <div id="livePreview" class="preview">Enter your skills and interests to see a live preview!</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultsSection" class="results card hide">
+      <div class="results-header">
+        <h2>Recommended Careers</h2>
+        <div id="confidenceBadge" class="badge">AI-ish Score</div>
+      </div>
+
+      <div id="resultsCards" class="cards"></div>
+
+      <div class="results-footer">
+        <button id="downloadReport" class="btn">Download Report (PDF-lite)</button>
+        <button id="againBtn" class="btn ghost">Try Different Input</button>
+      </div>
+    </section>
+  </main>
+
+  
+  <canvas id="confetti"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
